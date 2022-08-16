@@ -43,12 +43,12 @@ void Dps310::init(void)
 	m_revisionID = revId;
 
 	//find out which temperature sensor is calibrated with coefficients...
-	int16_t sensor = readByteBitfield(registers[TEMP_SENSORREC]);
+	int16_t sensor = 1; /*readByteBitfield(registers[TEMP_SENSORREC]);
 	if (sensor < 0)
 	{
 		m_initFail = 1U;
 		return;
-	}
+	}*/
 
 	//...and use this sensor for temperature measurement
 	m_tempSensor = sensor;
